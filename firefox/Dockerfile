@@ -1,9 +1,9 @@
 FROM nediiii/novnc-continaer
 
 LABEL maintainer "nediiii varndiiii@gmail.com"
-
-RUN apt-get update && \
-    apt-get install -y \
+  RUN rm /etc/apt/sources.list -f
+  COPY ./sources.list /etc/apt/ 
+  RUN apt-get update && apt-get install -y \
     firefox \
     ffmpeg \
     fonts-noto \
